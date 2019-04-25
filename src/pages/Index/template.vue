@@ -1,5 +1,5 @@
 <template>
-  <div id="index">  
+  <div id="index">
     <section class="blog-posts">
       <div class="item">
         <figure class="avatar">
@@ -24,5 +24,3 @@
 <script src="./template.js"></script>
 
 <style scoped lang="less" src="./template.less"></style>
-
-

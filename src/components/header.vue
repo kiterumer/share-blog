@@ -117,11 +117,11 @@ header.login {
   }
 
   .user{
-    positon:relative;
+    position:relative;
 
     ul{
       display:none;
-      positon:absolute;
+      position:absolute;
       right:0;
       list-style:none;
       border:1px solid #eaeaea;
