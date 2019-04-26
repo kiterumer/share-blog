@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="share">
     <Header id="header"></Header>
     <Main id="main">
       <router-view/>
@@ -23,7 +23,7 @@ export default {
 
 <style lang="less">
 @import "./assets/common.less";
-#app {
+#share {
   display: grid;
   grid-template-columns: 12% auto 12%;
   grid-template-rows: auto 1fr auto;
@@ -48,9 +48,9 @@ export default {
   }
 
 }
-
+// 媒体查询
 @media (max-width: 768px) {
-  #app {
+  #share {
     grid-template-columns: 10px auto 10px;
 
     #header, #footer {

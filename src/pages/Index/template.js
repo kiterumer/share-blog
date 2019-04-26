@@ -1,30 +1,30 @@
-import request from '@/helpers/request.js'
-import auth from '@/api/auth.js'
+// import request from '@/helpers/request.js'
+// import auth from '@/api/auth.js'
 import blog from '@/api/blog.js'
 
 export default {
-    // name: 'HelloWorld',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        blogs:[],
+        total:0,
+        page:1
       }
     },
+    created(){
+      this.page = parseInt(this.$route.query.page) || 1
+      blog.getIndexBlogs({page:this.page}).then(res => {
+        this.blogs = res.data
+        this.total = res.total
+        this.page = res.page
+      })
+    },
     methods:{
-      success(){
-        this.$message({
-          message:'这是一条成功消息',
-          type:'success'
-        })
-      },
-      click1(){
-        this.$alert('这是一段内容', '标题名称', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
-            })
-          }
+      onPageChange(newPage){
+        blog.getIndexBlogs({page:newPage}).then(res => {
+          this.blogs = res.data
+          this.total = res.total
+          this.page = res.page
+          this.$router.push({path:'/',query:{page:newPage}})
         })
       }
     }

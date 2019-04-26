@@ -9,13 +9,12 @@
       </div> 
     </template>
     <template v-if="isLogin">
-      <h1>Let's share</h1>
-      <i class="edit el-icon-edit"></i>
-      <!-- <img class="avatar" src="http://cn.gravatar.com/avatar/1?s=128&d=identicon" alt="">           -->
+      <h1><router-link to="/">Let's share</router-link></h1>
+      <router-link to="/create"><i class="edit el-icon-plus"></i></router-link>
       <div class="user">
         <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
         <ul>
-          <li><router-link to="my">我的</router-link></li>
+          <li><router-link to="/my">我的</router-link></li>
           <li><a href="#" @click="onLogout">注销</a></li>
         </ul>
       </div>
@@ -97,10 +96,13 @@ header.login {
   h1 {
     margin: 0;
     padding: 0;
-    color: #fff;
+    // color: #fff;
     font-size: 40px;
     text-transform: uppercase;
     flex: 1;
+    a{
+      color:#fff;
+    }
   }
 
   .edit {
