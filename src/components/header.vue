@@ -49,7 +49,8 @@ export default {
         'logout'
       ]),
 
-      onLogout(){
+      onLogout(e){
+        e.stopPropagation()
         this.logout()
       }
     }
