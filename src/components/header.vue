@@ -11,13 +11,13 @@
     <template v-if="isLogin">
       <h1><router-link to="/">Let's share</router-link></h1>
       <router-link to="/create"><i class="edit el-icon-plus"></i></router-link>
-      <div class="user">
-        <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
+      <router-link class="user" to="/my">
+        <img class="avatar" :src="user.avatar" :alt="user.username">
         <ul>
           <li><router-link to="/my">我的</router-link></li>
           <li><a href="#" @click="onLogout">注销</a></li>
         </ul>
-      </div>
+      </router-link>
     </template>
   </header>
 </template>
@@ -61,7 +61,7 @@ export default {
 @import "../assets/base.less";  
 
 header.no-login {
-  padding: 0 12% 30px 12%;
+  padding: 0 12% 40px 12%;
   background: @bgColor;
   display: grid;
   justify-items: center;
@@ -69,7 +69,7 @@ header.no-login {
   h1 {
     color: #fff;
     font-size: 40px;
-    margin: 60px 0 0 0;
+    margin: 55px 0 0 0;
     text-transform: uppercase;
   }
 
@@ -120,22 +120,34 @@ header.login {
 
   .user{
     position:relative;
+    cursor: pointer;
 
     ul{
       display:none;
       position:absolute;
-      right:0;
+      right: -6px;
       list-style:none;
       border:1px solid #eaeaea;
       margin:0;
       padding:0;
       background-color:#fff;
+      box-shadow: 0 0 2px rgba(0,0,0,.1);
+      border-radius: 3px;
+      
+      li{
+        border-bottom: 1px solid rgba(0,0,0,.1);
+ 
+      }
+      li:last-child{
+        border-bottom: none;
+      }
+
       a{
         text-decoration:none;
         color:#333;
         font-size:12px;
         display:block;
-        padding:5px 10px;
+        padding:7px 14px;
         
         &:hover{
           background-color:#eaeaea;

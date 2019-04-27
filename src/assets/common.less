@@ -1,6 +1,6 @@
 @import "./base.less";
 body {
-    font: 14px/1.6 Arial,"Microsoft YaHei","黑体","宋体",sans-serif;
+    font: 14px/1.6 "Microsoft YaHei",Arial,"黑体","宋体",sans-serif;
     color: #333;
     margin: 0;
   }
@@ -35,4 +35,15 @@ body {
   
   .el-input.is-active .el-input__inner, .el-input__inner:focus, .el-textarea__inner:focus {
     border-color: @themeLighterColor;
+  }
+
+  .pagination{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .item{
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
   }
