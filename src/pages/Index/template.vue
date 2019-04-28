@@ -18,6 +18,7 @@
       <el-pagination 
       background 
       layout="prev, pager, next" 
+      pager-count=5
       :total="total"
       :current-page="page"
       @current-change="onPageChange">
