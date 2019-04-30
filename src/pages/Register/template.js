@@ -12,7 +12,7 @@ export default {
       ...mapActions(['register']),
 
       onRegister(){
-        this.onRegister({username:this.username,password:this.password})
+        this.register({username:this.username,password:this.password})
           .then(()=>{
             this.$router.push({path:'/'})
           })
